@@ -45,7 +45,7 @@ def create_tables():
                 if User.query.count() == 0:
                     print("Creating Super Admin..."); super_admin = User( full_name="Super Admin", username="superadmin", role="Super Admin"); super_admin.set_password("admin123"); db.session.add(super_admin); db.session.commit(); print("Super Admin created...")
                 if Team.query.count() == 0:
-                     teams = [ Team(team_name="APJ TAMIZHAN", captain_name="SILAMBARASAN R"), Team(team_name="SPARTEN ROCKERZ", captain_name="BARATHI K"), Team(team_name="CRAZY 11", captain_name="NITHYARAJ"), Team(team_name="JOLLY PLAYERS", captain_name="VINOTH"), Team(team_name="DADA WARRIORS", captain_name="PRAVEEN PRABHAKARAN"), Team(team_name="THUNDER STRIKERS", captain_name="GURUNATHAN S"), Team(team_name="SPARK 11", captain_name="TBA") ]
+                     teams = [ Team(team_name="APJ TAMIZHAN", captain_name="SILAMBARASAN R"), Team(team_name="SPARTEN ROCKERZ", captain_name="BARATHI K"), Team(team_name="CRAZY 11", captain_name="NITHYARAJ"), Team(team_name="JOLLY PLAYERS", captain_name="VINOTH"), Team(team_name="DADA WARRIORS", captain_name="PRAVEEN PRABHAKARAN"), Team(team_name="THUNDER STRIKERS", captain_name="GURUNATHAN S"), Team(team_name="SPARK 11", captain_name="VELMANI P") ]
                      db.session.bulk_save_objects(teams); db.session.commit(); print(f"{len(teams)} teams seeded.")
                 if Player.query.count() == 0:
                      print("Player table is empty. Run 'python import_players.py' to populate.")
@@ -453,4 +453,5 @@ def export_players():
 
 # --- RUN THE APP ---
 if __name__ == '__main__':
+
     app.run(debug=True)
